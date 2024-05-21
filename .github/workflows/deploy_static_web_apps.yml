@@ -41,11 +41,7 @@ jobs:
         ###### End of Repository/Build Configurations ######
       -name : Deploy hugo
         uses: peaceiris/actions-gh-pages@v3
-          if: github.ref == 'refs/heads/main'
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./public
-
+        
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest

@@ -1,0 +1,34 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.text-common-secondary {
+  color: $color-dark;
+
+  @include desktop {
+    font-size: $font-size-pc;
+    line-height: calc(30 / 18);
+    text-align: center;
+  }
+
+  @include mobile {
+    font-size: $font-size-sp;
+    line-height: calc(30 / 16);
+  }
+}
+
+.text-common-primary {
+  color: $color-default;
+  font-weight: 700;
+
+  @include desktop {
+    font-size: 0.311rem;
+    line-height: calc(64 / 31.1);
+    text-align: center;
+  }
+
+  @include mobile {
+    font-size: $font-size-sp;
+    line-height: calc(24 / 16);
+  }
+}

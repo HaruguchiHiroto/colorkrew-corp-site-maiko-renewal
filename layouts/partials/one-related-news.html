@@ -1,0 +1,14 @@
+<li class="news-item"><a class="item-link" href="{{ .RelPermalink }}"></a>
+  <div class="item-inner">
+    <div class="item-heading">
+      <div class="category-common-news">
+        <ul class="category-wrapper">
+          <li class="category-entry"><a class="entry-label trans" href="{{ .RelPermalink }}"><span
+                class="label-wrapper" data-category-id="{{ .Params.category }}">{{ .Params.category }}</span></a></li>
+        </ul>
+      </div>
+      <time class="heading-date" datetime="{{ .Date.Format " 2006.01.02" }}">{{ .Params.date.Format "2006.01.02"}}</time>
+    </div>
+    <p class="item-title">{{ .Params.title }}</p>
+  </div>
+</li>

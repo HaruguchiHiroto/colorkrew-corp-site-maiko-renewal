@@ -1,0 +1,11 @@
+<div class="pagination">
+  <ul class="pagination-list">
+    {{- with .Parent.Pages.Prev . }}
+    <li class="pagination-item"><a class="trans button-common-secondary is-prev" href="{{ .RelPermalink }}">前の記事</a></li>
+    {{- end }}
+    <li class="pagination-item"><a class="trans button-common-secondary is-home" href="/news/">一覧へ</a></li>
+    {{- with .Parent.Pages.Next . }}
+    <li class="pagination-item"><a class="trans button-common-secondary is-next" href="{{ .RelPermalink }}">次の記事</a></li>
+    {{- end }}
+  </ul>
+</div>

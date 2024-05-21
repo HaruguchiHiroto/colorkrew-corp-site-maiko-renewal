@@ -1,0 +1,4 @@
+{{ $jquery := resources.Get "js/jquery.min.js" }}
+<script type="text/javascript" src="{{ $jquery.RelPermalink }}"></script>
+{{ $js := resources.Get "js/scripts.js" | resources.Minify }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}"></script>

@@ -1,0 +1,6 @@
+baseURL = 'https://colorkrew.com/'
+languageCode = 'ja_JP'
+defaultContentLanguage = 'ja'
+title = 'Colorkrew(カラクル)'
+description = '株式会社Colorkrew(カラクル)の公式コーポレートサイト。「Color Your Work with Excitement」というビジョンのもと、カラフルなチームが、ITで世界にたのしいカラクリをうみだしとどけます！'
+hasCJKLanguage = true

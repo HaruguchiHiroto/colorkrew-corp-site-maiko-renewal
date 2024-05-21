@@ -1,0 +1,80 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--[if IE]><meta http-equiv="cleartype" content="on"><![endif]-->
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+  {{- if eq .Params.section_en "News" }}
+  <meta name="description" content="{{ .Params.title }}">
+  {{- else }}
+  <meta name="description" content="{{ .Description }}">
+  {{ end }}
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  {{- if .IsHome }}
+  <title>{{ .Site.Title }} | {{ .Params.title }}</title>
+  {{- else if eq .Params.section_en "News" }}
+  <title>{{ .Params.title }}</title>
+  {{- else }}
+  <title>{{ .Params.title }} | {{ .Site.Title }}</title>
+  {{- end }}
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/common/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/common/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/common/favicon-16x16.png">
+  <!-- <link rel="manifest" href="./manifest/site.webmanifest"> -->
+  <link rel="mask-icon" href="/img/common/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:locale" content="{{ or site.Language.LanguageCode site.Language.Lang }}">
+  {{- if .IsHome }}
+  <meta property="og:site_name" content="{{ .Site.Title }} | {{ .Params.title }}">
+  {{- else if eq .Params.section_en "News" }}
+  <meta property="og:site_name" content="{{ .Params.title }}">
+  {{- else }}
+  <meta property="og:site_name" content="{{ .Params.title }} | {{ .Site.Title }}">
+  {{- end }}
+  <meta property="og:type" content="website">
+  {{- if .IsHome }}
+  <meta property="og:title" content="{{ .Site.Title }} | {{ .Params.title }}">
+  {{- else if eq .Params.section_en "News" }}
+  <meta property="og:title" content="{{ .Params.title }}">
+  {{- else }}
+  <meta property="og:title" content="{{ .Params.title }} | {{ .Site.Title }}">
+  {{- end }}
+  {{- if eq .Params.section_en "News" }}
+  <meta property="og:description" content="{{ .Params.title }}">
+  {{- else }}
+  <meta property="og:description" content="{{ .Description }}">
+  {{- end }}
+  <meta property="og:url" content="{{ .Site.BaseURL }}">
+  {{- if isset .Params "hero_image" }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.hero_image }}">
+  {{- else }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}img/common/ogp.jpg">
+  {{- end }}
+  {{- if isset .Params "hero_image" }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.hero_image }}">
+  {{- else }}
+  <meta property="og:image:secure_url" content="{{ .Site.BaseURL }}img/common/ogp.jpg">
+  {{- end }}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  {{- if .IsHome }}
+  <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Params.title }}">
+  {{- else if eq .Params.section_en "News" }}
+  <meta name="twitter:title" content="{{ .Params.title }}">
+  {{- else }}
+  <meta name="twitter:title" content="{{ .Params.title }} | {{ .Site.Title }}">
+  {{- end }}
+  {{- if eq .Params.section_en "News" }}
+  <meta name="twitter:description" content="{{ .Params.title }}">
+  {{- else }}
+  <meta name="twitter:description" content="{{ .Description }}">
+  {{- end }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}img/common/ogp.jpg">
+  {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css">
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>

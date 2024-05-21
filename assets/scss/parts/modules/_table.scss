@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.table-common-primary {
+  .item-title {
+    border-bottom: solid 0.02rem $color-dark;
+    color: $color-dark;
+    font-weight: 700;
+  }
+
+  .item-detail {
+    color: $color-dark;
+  }
+
+  @include desktop {
+    .item-wrapper {
+      display: flex;
+    }
+
+    .item-title {
+      flex: 0 0 auto;
+      width: 270px;
+      padding: 19px 20px;
+      font-size: $font-size-sp;
+      line-height: calc(24 / 16);
+    }
+
+    .item-detail {
+      flex: 1;
+      padding: 16px 20px;
+      border-bottom: solid 0.02rem #b9c0cc;
+      line-height: calc(32 / 18);
+
+      span {
+        font-size: $font-size-sp;
+
+        &.is-small {
+          font-size: 0.14rem;
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    .item-title {
+      width: calc(270 / 1360 * 100%);
+      min-width: 200px;
+    }
+  }
+
+  @include mobile {
+    .item-title {
+      padding: 0.16rem 0;
+    }
+
+    .item-detail {
+      padding: 0.16rem 0;
+      line-height: 1.5;
+
+      span {
+        &.is-small {
+          font-size: 0.13rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@charset "utf-8";
+@import "../base/mixins";
+@import "../base/variables";
+
+.keyvisual-common {
+  background: center/cover no-repeat;
+  color: $color-dark;
+
+  .title-japanese,
+  .title-english {
+    display: block;
+  }
+
+  .title-japanese {
+    font-weight: 700;
+  }
+
+  .title-english {
+    color: #535d6e;
+    font-family: $font-poppins;
+    font-weight: 600;
+  }
+
+  @include desktop {
+    min-height: 400px;
+    padding: 128px 0 32px;
+    background-image: url("/img/common/keyvisual_img_01.jpg");
+
+    .keyvisual-title {
+      margin-bottom: 24px;
+      font-size: 0.48rem;
+      line-height: calc(92 / 64);
+    }
+
+    .title-japanese {
+      margin-bottom: 16px;
+    }
+
+    .title-english {
+      font-size: 0.24rem;
+      font-weight: 600;
+    }
+  }
+
+  @include mobile {
+    padding: 1rem 0 0.32rem;
+    background-image: url("/img/common/sp/keyvisual_img_01.jpg");
+
+    .keyvisual-title {
+      margin-bottom: 0.4rem;
+      font-size: 0.32rem;
+      line-height: calc(40 / 32);
+    }
+
+    .title-japanese {
+      margin-bottom: 0.24rem;
+    }
+
+    .title-english {
+      font-size: $font-size-sp;
+    }
+  }
+}

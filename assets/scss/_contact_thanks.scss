@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.section-contact-thanks {
+  background-color: $color-white;
+
+  .thanks-title {
+    color: $color-default;
+    font-weight: 700;
+  }
+
+  .thanks-detail {
+    background-color: $color-grey;
+    color: $color-dark;
+    font-weight: 700;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .thanks-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include desktop {
+    padding: 56px 0 216px;
+
+    .thanks-title {
+      margin-bottom: 24px;
+      font-size: 0.311rem;
+      text-align: center;
+    }
+
+    .thanks-detail {
+      margin-bottom: 64px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .list-common-dots {
+      max-width: 1196px;
+      margin: 0 auto 64px;
+
+      & > li {
+        font-size: 0.15rem;
+        &::before {
+          top: 0.1rem;
+        }
+      }
+    }
+
+    .button-common-secondary {
+      font-size: $font-size-pc;
+      background-position-y: 0.25rem;
+    }
+  }
+
+  @include mobile {
+    padding: 0.64rem 0 1.68rem;
+
+    .thanks-title {
+      margin-bottom: 0.16rem;
+      font-size: 0.2304rem;
+      line-height: calc(32 / 23.04);
+    }
+
+    .thanks-detail {
+      margin-bottom: 0.16rem;
+      padding: 0.16rem;
+    }
+
+    .list-common-dots {
+      margin-bottom: 0.56rem;
+
+      & > li {
+        font-size: 0.1333rem;
+        line-height: calc(25.6 / 13.33);
+
+        &::before {
+          top: 0.1rem;
+        }
+      }
+    }
+  }
+}

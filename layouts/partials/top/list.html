@@ -1,0 +1,21 @@
+<ul class="list-common-news">
+  {{- range first 3 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") }}
+  <li class="news-item"><a class="item-link" href="{{ .RelPermalink }}"></a>
+    <div class="item-inner">
+      <div class="item-heading">
+        <div class="category-common-news">
+          <ul class="category-wrapper">
+            <li class="category-entry">
+              <a class="entry-label trans" href="{{ .RelPermalink }}">
+                <span class="label-wrapper" data-category-id="{{ .Params.Category }}">{{ .Params.Category }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <time class="heading-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+      </div>
+      <p class="item-title">{{ .Title }}</p>
+    </div>
+  </li>
+  {{- end }}
+</ul>

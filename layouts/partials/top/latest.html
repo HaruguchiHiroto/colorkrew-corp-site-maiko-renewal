@@ -1,0 +1,8 @@
+<div class="keyvisual-news load">
+  {{- range first 1 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") }}
+  <a class="keyvisual-news-wrap" href="{{ .RelPermalink }}">
+    <time class="news-time" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+    <p class="news-title">{{ .Title }}</p>
+  </a>
+  {{- end }}
+</div>

@@ -1,0 +1,14 @@
+<div class="article-news" aria-label="Article News">
+  <div class="wrapper">
+    {{ partial "news/header.html" . }}
+    <div class="article-post">
+      <div class="post-content">
+        <figure><img src="/{{ .Params.hero_image }}" width="600" height="400" loading="lazy" alt="{{ .Title }}"></figure>
+        {{ .Content }}
+      </div>
+      {{ partial "social-media.html" . }}
+    </div>
+    {{ partial "news/nav.html" .}}
+  </div>
+</div>
+{{ partial "news/related-post.html" .}}

@@ -1,0 +1,40 @@
+<div class="posts-list js-news-content">
+  <div class="posts-item js-accordion-load-more">
+  {{- $type := "news" }}
+  {{- $isGroupKey := true}}
+  {{- range (.Site.RegularPages.GroupByDate "2006") }}
+  {{- $count := (len .Pages) }}
+  {{- if (gt .Key 2000) }}
+  {{- range (where .Pages "Type" $type) }}
+  {{- if $isGroupKey }}
+  <div class="posts-heading js-accordion-heading">
+    <h2 class="heading-title">{{ .Date.Format "2006" }}<span class="heading-year">年</span></h2>
+  </div>
+  {{- $isGroupKey = false}}
+  {{- end }}
+  {{- end }}
+  {{- $isGroupKey = true}}
+  <div class="posts-content js-accordion-content">
+    <ul class="news-list js-accordion-list">
+      {{ range (where .Pages "Type" $type) }}
+      <li class="news-item"><a class="item-link" href="{{ .RelPermalink }}"></a>
+        <div class="item-inner">
+          <div class="item-heading">
+            <div class="category-common-news">
+              <ul class="category-wrapper">
+                <li class="category-entry"><a class="entry-label trans" href="{{ .RelPermalink }}"><span class="label-wrapper" data-category-id="{{ .Params.Category }}">{{ .Params.Category }}</span></a></li>
+              </ul>
+            </div>
+            <time class="heading-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+          </div>
+          <p class="item-title">{{ .Title }}</p>
+        </div>
+      </li>
+      {{- end }}
+    </ul>
+    <button class="trans button-common-secondary js-button-load-more">もっと見る</button>
+  </div>
+  {{- end }}
+  {{- end }}
+  </div>
+</div>

@@ -1,0 +1,134 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.button-common-secondary {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 3rem;
+  min-height: 0.64rem;
+  padding: 0.1rem 0.4rem;
+  border: 0.02rem solid $color-dark;
+  background: url("/img/common/icn_arrow_black_01.svg") center right 0.11rem/ 0.24rem auto no-repeat;
+  color: $color-dark;
+  font-size: $font-size-sp;
+  font-weight: bold;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.button-common-primary {
+  display: inline-block;
+  position: relative;
+  min-height: 0.3rem;
+  padding: 0 0.31rem 0 0.05rem;
+  transition: color 0.2s ease;
+  color: $color-dark;
+  font-size: $font-size-pc;
+  font-weight: bold;
+  line-height: calc(23 / 18);
+  text-decoration: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.24rem;
+    height: 0.24rem;
+    margin-top: -0.15rem;
+  }
+
+  &::before {
+    background: url("/img/common/icn_arrow_black_01.svg") center / 0.24rem auto no-repeat;
+  }
+
+  &::after {
+    z-index: 1;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    background: url("/img/common/icn_arrow_blue_02.svg") center/.24rem auto no-repeat;
+  }
+
+  &.is-blue {
+    color: $color-blue;
+
+    &::before {
+      background: url("/img/common/icn_arrow_blue_02.svg") center / 0.24rem auto no-repeat;
+    }
+
+    &::after {
+      background: url("/img/common/icn_arrow_blue_03.svg") center/.24rem auto no-repeat;
+    }
+
+    &:hover {
+      color: #1063df;
+    }
+  }
+
+  &:hover {
+    color: $color-blue;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.button-common-tertiary {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-right: 0.32rem;
+  padding-left: 0.62rem;
+  transition: color 0.2s ease;
+  color: $color-blue;
+  font-size: $font-size-sp;
+  font-weight: 700;
+  text-decoration: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.24rem;
+    height: 0.24rem;
+    margin-top: -0.12rem;
+  }
+
+  &::before {
+    background: url("/img/common/icn_arrow_blue_02.svg") center / 0.24rem auto no-repeat;
+  }
+
+  &::after {
+    z-index: 1;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    background: url("/img/common/icn_arrow_blue_03.svg") center/.24rem auto no-repeat;
+  }
+
+  &:hover {
+    color: #1063df;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  @include desktop {
+    height: 0.44rem;
+    background: url("/img/common/icn_colorlog_01.png") top left/44px auto no-repeat;
+  }
+
+  @include mobile {
+    height: 0.5rem;
+    padding-bottom: 0.02rem;
+    background: url("/img/common/sp/icn_colorlog_01.png") top left/.5rem auto no-repeat;
+  }
+}

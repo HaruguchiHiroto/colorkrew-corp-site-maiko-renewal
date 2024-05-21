@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.title-common-primary {
+  color: #1a3755;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+
+  &.is-original {
+    text-align: left;
+  }
+
+  @include desktop {
+    font-size: 0.4479rem;
+  }
+
+  @include mobile {
+    font-size: 0.32rem;
+    letter-spacing: 0.002em;
+  }
+}
+
+.title-common-secondary {
+  color: $color-white;
+  font-weight: 700;
+
+  @include desktop {
+    font-size: 0.48rem;
+    line-height: 1.6;
+  }
+
+  @include mobile {
+    font-size: 0.32rem;
+    text-align: center;
+  }
+}
+
+.title-common-tertiary {
+  color: $color-default;
+  font-weight: 700;
+
+  @include desktop {
+    font-size: 0.311rem;
+    line-height: calc(57.6 / 31.1);
+    text-align: center;
+  }
+
+  @include mobile {
+    font-size: 0.2304rem;
+    line-height: calc(32 / 23.04);
+    text-align: left;
+  }
+}

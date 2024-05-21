@@ -1,0 +1,151 @@
+@charset "utf-8";
+@import "variables";
+@import "mixins";
+
+html {
+  opacity: 1;
+  line-height: 1;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+
+  &.is-frozen-os {
+    overflow: hidden;
+  }
+
+  @include desktop {
+    font-size: 625%;
+  }
+
+  @include tablet-sm {
+    @include scroll-hidden;
+  }
+
+  @include mobile {
+    @include scroll-hidden;
+
+    min-height: 100vh;
+    font-size: calc(100vw / 3.75);
+  }
+}
+
+body {
+  background-color: $color-grey;
+  color: $color-default;
+  font-family: $font-noto;
+  font-weight: $font-weight;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  html.is-frozen-windows & {
+    position: fixed;
+    width: 100%;
+  }
+
+  @include desktop {
+    font-size: $font-size-pc;
+    line-height: $line-height-pc;
+  }
+
+  @include mobile {
+    font-size: $font-size-sp;
+    line-height: $line-height-sp;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.trans-link {
+  transition: color 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    .is-untouchable & {
+      color: $color-blue;
+    }
+  }
+}
+
+.trans {
+  transition: opacity 0.2s ease;
+  opacity: 1;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.load {
+  opacity: 0;
+
+  html.wf-active & {
+    opacity: 1;
+  }
+}
+
+.image-common {
+  display: block;
+  width: 100%;
+}
+
+.object-common {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  @include desktop {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  @include mobile {
+    min-width: 320px;
+  }
+}
+
+.wrapper {
+  @include desktop {
+    width: calc(100% - 80px);
+    max-width: $wrapper-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include mobile {
+    padding-right: 0.15rem;
+    padding-left: 0.15rem;
+  }
+}
+
+.sm {
+  @include desktop {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.tb-sm {
+  @include desktop-md {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.md-tb {
+  @include tablet-sm {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.md {
+  @include mobile {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}

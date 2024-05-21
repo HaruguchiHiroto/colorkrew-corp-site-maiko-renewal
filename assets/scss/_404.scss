@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.section-error {
+  background-color: $color-white;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .error-title {
+    color: $color-default;
+    font-weight: bold;
+  }
+
+  @include desktop {
+    padding: 208px 0 220px;
+
+    .wrapper {
+      text-align: center;
+    }
+
+    .error-title {
+      margin-bottom: 40px;
+      font-size: 0.311rem;
+      line-height: calc(64 / 31.1);
+    }
+  }
+
+  @include mobile {
+    padding: 1.92rem 0 1.7rem;
+
+    .error-title {
+      margin-bottom: 0.64rem;
+      font-size: 0.23rem;
+      line-height: calc(32 / 23);
+    }
+  }
+}

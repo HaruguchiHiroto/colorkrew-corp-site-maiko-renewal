@@ -1,0 +1,100 @@
+@charset "utf-8";
+@import "variables";
+
+@mixin desktop {
+  @media print, (min-width: $sm-break + 0.02) {
+    @content;
+  }
+}
+
+@mixin desktop-md {
+  @media print, (min-width: $md-break + 0.02) {
+    @content;
+  }
+}
+
+@mixin desktop-xs {
+  @media print, (min-width: 768px) and (max-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media print, (min-width: 1024px) and (max-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin desktop-xxl {
+  @media print, (min-width: 767.98px) and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin desktop-xxxl {
+  @media print, (min-width: 1600.02px) {
+    @content;
+  }
+}
+
+@mixin desktop-max {
+  @media print, (min-width: 2300.02px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media print, (min-width: $sm-break + 0.02) and (max-width: $md-break) {
+    @content;
+  }
+}
+
+@mixin tablet-md {
+  @media only screen and (max-width: 1100px) and (min-width: 1024.02px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm {
+  @media only screen and (max-width: $md-break) {
+    @content;
+  }
+}
+
+@mixin tablet-xl {
+  @media print, (min-width: 768px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $sm-break) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin text-ellipse($line) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin scroll-hidden {
+  &::-webkit-scrollbar {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,252 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.item-common-primary {
+  border-radius: 0.08rem;
+  background-color: $color-white;
+  color: $color-dark;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-image,
+  .item-figure {
+    figure {
+      position: relative;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content-intro {
+    font-family: $font-poppins;
+    font-weight: bold;
+    line-height: calc(24 / 16);
+  }
+
+  .content-title {
+    color: $color-dark;
+    text-align: left;
+  }
+
+  .content-logo {
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .content-block {
+    border-radius: 0.08rem;
+    background: $color-grey;
+  }
+
+  .block-title {
+    font-weight: bold;
+  }
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 32px 56px;
+
+    .item-image {
+      flex: 0 0 auto;
+      width: calc(465 / 1248 * 100%);
+      margin-right: 56px;
+
+      figure {
+        padding-top: calc(280 / 465 * 100%);
+      }
+    }
+
+    .item-figure {
+      flex: 0 0 auto;
+      width: calc(462 / 1248 * 100%);
+      margin-right: 59px;
+
+      figure {
+        padding-top: calc(320 / 462 * 100%);
+      }
+    }
+
+    .item-content {
+      flex: 1;
+    }
+
+    .content-intro {
+      margin-bottom: 24px;
+      font-size: $font-size-pc;
+    }
+
+    .content-title {
+      margin-bottom: 16px;
+      font-size: 0.24rem;
+      line-height: 1.5;
+    }
+
+    .content-logo {
+      height: 60px;
+      margin-bottom: 16px;
+    }
+
+    .content-text {
+      margin-bottom: 16px;
+    }
+
+    .content-block {
+      padding: 24px 24px 8px;
+    }
+
+    .block-title {
+      margin-bottom: 16px;
+      font-size: $font-size-pc;
+      line-height: 1.5;
+    }
+
+    .list-common-dots {
+      margin-bottom: 4px;
+
+      & > li {
+        margin-bottom: 4px;
+        font-size: 0.15rem;
+
+        &::before {
+          top: 0.6em;
+        }
+      }
+    }
+
+    .button-common-primary {
+      min-height: 0.21rem;
+      margin-right: 37px;
+      padding-right: 34px;
+      padding-left: 0;
+      font-size: 0.15rem;
+
+      &::before,
+      &::after {
+        margin-top: -13px;
+      }
+    }
+  }
+
+  @include tablet {
+    flex-wrap: wrap;
+
+    .item-image {
+      width: 100%;
+      max-width: 465px;
+      margin: 0 auto 24px;
+    }
+
+    .item-figure {
+      width: 462px;
+      margin: 0 auto 32px;
+    }
+
+    .item-content {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 0.16rem;
+    padding: 0.24rem 0.13rem;
+
+    .item-image {
+      width: 2.98rem;
+      margin: 0 auto 0.08rem;
+
+      figure {
+        padding-top: calc(280 / 465 * 100%);
+      }
+    }
+
+    .item-figure {
+      width: 1.74rem;
+      margin: 0 auto 0.16rem;
+
+      figure {
+        padding-top: calc(320 / 462 * 100%);
+      }
+    }
+
+    .content-intro {
+      margin-bottom: 0.16rem;
+      font-size: $font-size-sp;
+    }
+
+    .content-title {
+      margin-bottom: 16px;
+      font-size: 0.24rem;
+      line-height: 1.5;
+    }
+
+    .content-logo {
+      height: 0.31rem;
+      margin-bottom: 0.16rem;
+    }
+
+    .content-text {
+      margin-bottom: 0.16rem;
+      font-size: 0.15rem;
+    }
+
+    .content-block {
+      padding: 0.16rem 0.16rem 0.08rem;
+    }
+
+    .block-title {
+      margin-bottom: 0.16rem;
+      font-size: $font-size-sp;
+      line-height: 1.5;
+    }
+
+    .list-common-dots {
+      margin-bottom: 0.16rem;
+
+      & > li {
+        margin-bottom: 0;
+        font-size: 0.1333rem;
+        line-height: calc(25.6 / 13.33);
+
+        &::before {
+          top: 0.1rem;
+        }
+      }
+    }
+
+    .block-button {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0.14rem;
+    }
+
+    .button-common-primary {
+      min-height: 0.24rem;
+      padding-right: 0.31rem;
+      padding-left: 0;
+      font-size: 0.13rem;
+
+      &::before,
+      &::after {
+        margin-top: -0.17rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.breadcrumb-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+
+  & > li {
+    line-height: 1.5;
+
+    &::after {
+      content: "/";
+      display: inline-block;
+    }
+
+    &:last-child {
+      margin-left: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      font-weight: 700;
+    }
+  }
+
+  @include desktop {
+    padding: 17px 0;
+
+    & > li {
+      color: $color-dark;
+      font-size: 0.14rem;
+
+      &::after {
+        margin-right: 15px;
+        margin-left: 14px;
+      }
+    }
+
+    a {
+      display: inline-block;
+      color: $color-dark;
+    }
+  }
+
+  @include mobile {
+    margin-right: -0.1rem;
+    margin-bottom: -0.1rem;
+    padding: 0.06rem 0;
+
+    & > li {
+      margin-bottom: 0.1rem;
+      color: #1a3755;
+      font-size: 0.1333rem;
+
+      &::after {
+        margin-right: 0.07rem;
+        margin-left: 0.06rem;
+      }
+    }
+
+    a {
+      display: inline-block;
+      color: #6e8299;
+    }
+  }
+}

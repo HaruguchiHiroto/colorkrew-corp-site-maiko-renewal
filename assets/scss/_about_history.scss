@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+.section-about-history {
+  background-color: $color-white;
+
+  @include desktop {
+    margin-bottom: -40px;
+    padding: 64px 0 152px;
+
+    .title-common-primary {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: -0.24rem;
+    padding: 0.64rem 0 0.88rem;
+
+    .title-common-primary {
+      margin-bottom: 0.32rem;
+    }
+  }
+}
+
+.section-history-award {
+  .award-list {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .award-block {
+    border-radius: 0.08rem;
+    background-color: $color-white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .block-title {
+    color: $color-dark;
+  }
+
+  @include desktop {
+    padding: 0 0 120px;
+
+    .title-common-primary {
+      margin-bottom: 64px;
+    }
+
+    .award-block {
+      margin-bottom: 32px;
+      padding: 24px 30px 40px;
+    }
+
+    .block-title {
+      margin-bottom: 24px;
+      font-size: 0.32rem;
+      line-height: calc(56 / 32);
+    }
+  }
+
+  @include mobile {
+    padding: 0 0 0.64rem;
+
+    .title-common-primary {
+      margin-bottom: 0.32rem;
+    }
+
+    .award-block {
+      margin-bottom: 0.16rem;
+      padding: 0.32rem 0.17rem;
+    }
+
+    .block-title {
+      margin-bottom: 0.16rem;
+      font-size: 0.3318rem;
+      line-height: calc(48 / 33.18);
+    }
+  }
+}

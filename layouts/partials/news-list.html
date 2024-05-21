@@ -1,0 +1,11 @@
+<ul class="list-common-news">
+  {{ range first 1 (where (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") "Params.category" "お知らせ") }}
+    {{ partial "one-related-news.html" .}}
+  {{ end }}
+  {{ range first 1 (where (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") "Params.category" "IR") }}
+    {{ partial "one-related-news.html" .}}
+  {{ end }}
+  {{ range first 1 (where (where .Site.RegularPages.ByPublishDate.Reverse "Section" "news") "Params.category" "プレスリリース") }}
+    {{ partial "one-related-news.html" .}}
+  {{ end }}
+</ul>

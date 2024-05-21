@@ -1,0 +1,159 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.language-wrap {
+  position: relative;
+
+  .language-heading {
+    position: relative;
+    transform: rotate(0.001deg);
+    transition: opacity 0.2s ease;
+    font-size: 0.14rem;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
+    }
+  }
+
+  .language-content {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0.04rem;
+    opacity: 0;
+    list-style: none;
+    pointer-events: none;
+  }
+
+  &.is-active {
+    .language-content {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .language-heading {
+      &::before {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  .language-text {
+    font-size: 0.14rem;
+    font-weight: 700;
+    line-height: 1.6;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .language-link {
+    display: block;
+  }
+
+  @include desktop-md {
+    padding-left: 22px;
+
+    .language-heading {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 0;
+      padding-right: 13px;
+      padding-left: 25px;
+      background: url("/img/common/icn_language_01.png") top 5px left 2px/20px auto no-repeat;
+      color: $color-dark;
+
+      &::after {
+        width: 7px;
+        height: 5px;
+        background-color: $color-dark;
+      }
+    }
+
+    .language-content {
+      width: 117px;
+      padding: 16px 16px 17px;
+      background-color: $color-white;
+      box-shadow: 1px 1px 4px rgba(#000, 0.08);
+    }
+
+    .language-text {
+      margin-bottom: 8px;
+      color: $color-dark;
+    }
+  }
+
+  @include tablet-md {
+    padding-left: 16px;
+  }
+
+  @include tablet-sm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.36rem;
+
+    .language-heading {
+      display: inline-flex;
+      align-items: center;
+      min-height: 0.3rem;
+      margin-bottom: 0;
+      padding-right: 0.13rem;
+      padding-left: 0.25rem;
+      background: url("/img/common/icn_language_02.svg") top 0.05rem left 0.02rem/0.2rem auto no-repeat;
+      color: $color-white;
+
+      &::after {
+        width: 0.07rem;
+        height: 0.04rem;
+        background-color: $color-white;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 100%;
+        transform: translateX(-50%);
+        opacity: 0;
+        background: transparent;
+        pointer-events: none;
+      }
+    }
+
+    .language-content {
+      left: 50%;
+      width: 1.17rem;
+      padding: 0.16rem 0.16rem 0.17rem;
+      transform: translateX(-50%);
+      background-color: $color-white;
+      box-shadow: 0.01rem 0.01rem 0.04rem rgba(#000, 0.08);
+    }
+
+    .language-text {
+      margin-bottom: 0.1rem;
+      color: $color-dark;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.section-about {
+  background-color: $color-white;
+
+  @include desktop {
+    padding: 64px 0 220px;
+  }
+
+  @include mobile {
+    padding: 0.64rem 0 1.7rem;
+  }
+}

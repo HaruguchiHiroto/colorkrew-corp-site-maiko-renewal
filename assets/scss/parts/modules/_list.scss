@@ -1,0 +1,138 @@
+@charset "utf-8";
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.list-common-dots {
+  margin-bottom: 0;
+  padding-left: 0.14rem;
+  list-style: none;
+
+  & > li {
+    position: relative;
+    margin-bottom: 0.08rem;
+    color: $color-dark;
+    font-family: $font-sans;
+    font-size: $font-size-sp;
+    font-weight: $font-weight;
+    line-height: calc(28 / 16);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.12rem;
+      left: -0.14rem;
+      width: 0.06rem;
+      height: 0.06rem;
+      border-radius: 50%;
+      background: url("/img/common/icn_dots_01.svg") center/cover no-repeat;
+
+      .is-mac & {
+        top: 0.11rem;
+      }
+    }
+
+    span {
+      display: inline-block;
+      font-family: $font-noto;
+    }
+  }
+}
+
+.list-policy-numbers {
+  @include reset-list;
+
+  position: relative;
+
+  .flow-item {
+    display: flex;
+    align-items: flex-start;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .item-icon {
+    position: relative;
+    flex: 0 0 auto;
+    max-width: 30%;
+    color: $color-blue;
+    font-family: $font-helvetica;
+    font-weight: 700;
+    letter-spacing: 0.002em;
+  }
+
+  .item-wrapper {
+    color: #333;
+  }
+
+  @include desktop {
+    .flow-item {
+      margin-bottom: 2px;
+    }
+
+    .item-icon {
+      top: -6px;
+      margin: 0 9px 0 0;
+      font-size: $font-size-pc;
+      line-height: calc(36 / 18);
+    }
+  }
+
+  @include mobile {
+    .flow-item {
+      margin-bottom: 0.16rem;
+    }
+
+    .item-icon {
+      margin-top: 1px;
+      margin-right: 0.09rem;
+      font-size: $font-size-sp;
+      line-height: $line-height-sp;
+      .is-ios & {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.list-policy-numbers.is-security,
+.list-policy-numbers.is-site {
+  @include desktop {
+    .flow-item {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  @include mobile {
+    .paragraph-policy {
+      p {
+        margin-bottom: 0.08rem;
+      }
+    }
+
+    .flow-item {
+      margin-bottom: 0.08rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.list-policy-numbers.is-security {
+  @include desktop {
+    .item-icon {
+      top: -8px;
+    }
+  }
+}

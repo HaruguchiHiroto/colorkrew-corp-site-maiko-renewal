@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{- if .IsHome }}
+  {{ .Content }}
+  {{- else if eq .Params.section_en "News" }}
+  {{ partial "keyvisual.html" . }}
+  {{ partial "news/content.html" . }}
+  {{- else }}
+  {{ partial "keyvisual.html" . }}
+  {{ .Content }}
+  {{- end }}
+{{end}}

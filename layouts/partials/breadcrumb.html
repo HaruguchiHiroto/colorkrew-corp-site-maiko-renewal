@@ -1,0 +1,10 @@
+    <nav class="breadcrumb-common load" aria-label="breadcrumb">
+      <ol class="breadcrumb-wrapper">
+        {{- range .Ancestors.Reverse }}
+        <li class="breadcrumb-item"><a class="item-wrapper trans-link" href="{{ .RelPermalink }}">{{ .Page.Params.section }}</a></li>
+        {{- end }}
+        {{- if .Params.title }}
+        <li class="breadcrumb-item"><span class="item-wrapper" aria-current="page">{{ .Params.title }}</span></li>
+        {{- end}}
+      </ol>
+    </nav>

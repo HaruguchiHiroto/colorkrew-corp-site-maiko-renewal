@@ -1,0 +1,9 @@
+<div class="article-heading">
+  <div class="category-common-news load">
+    <ul class="category-wrapper">
+      <li class="category-entry"><span class="entry-label"><span class="label-wrapper">{{ .Params.Category }}</span></span></li>
+    </ul>
+  </div>
+  <time class="heading-time load" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+  <h1 class="heading-title load">{{ .Title }}</h1>
+</div>
